@@ -30,19 +30,18 @@ def convertisseur_monnaie():
 
     monnaie_base = input("De quelle monnaie partez vous ? ")
     valeur_base = 0
-    valeur_user = int(input("Combien voulez vous convertir ? "))
+    valeur_user = float(input("Combien voulez vous convertir ? "))
     monnaie_user = input("En quelle monnaie voulez vous "
                          "convertir cette valeur ? ")
     monnaie_echange = monnaies[monnaie_user]["taux"]
 
     if monnaie_base in monnaies and monnaie_user in monnaies:
         valeur_base = monnaie_echange / monnaies[monnaie_base]["taux"]
-        print(valeur_base)
     else:
         print("Cette monnaie n'a pas été ajoutée")
 
     print(f"{valeur_user} {monnaie_base} en {monnaie_user} :\n ",
-          valeur_user*valeur_base)
+          valeur_user*valeur_base, monnaie_user)
 
 
 convertisseur_monnaie()
